@@ -1,6 +1,13 @@
 import webvtt
 import pandas as pd
 
+
+def convert_time(time_stamp):
+    values = time_stamp.split(':')
+    second = int(values[0]) * 3600 + int(values[1]) * 60 + int(values[2])
+    return second
+
+
 if __name__ == '__main__':
     update_start = True
     start = ''
@@ -30,7 +37,8 @@ if __name__ == '__main__':
             else:
                 print("find dot")
                 print("total text: " + accu_text)
-                df = df.append({'lecture': filename, 'start_time': start, 'end_time': end, 'text': accu_text}, ignore_index=True)
+                df = df.append({'lecture': filename, 'start_time': start, 'end_time': end, 'text': accu_text},
+                               ignore_index=True)
                 accu_text = ''
                 update_start = True
         else:
