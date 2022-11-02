@@ -1,0 +1,89 @@
+,lecture,start_time,end_time,text
+0,Lesson 1.2 Text Access.vtt,00:00:09.434,00:00:12.223,[SOUND]
+1,Lesson 1.2 Text Access.vtt,00:00:14.279,00:00:18.349,
+2,Lesson 1.2 Text Access.vtt,00:00:28.970,00:00:30.550,We explained that the state of the are natural language processing techniquesare still not good enough to process a lot of unrestricted text data
+3,Lesson 1.2 Text Access.vtt,00:00:31.360,00:00:37.250,"As a result,"
+4,Lesson 1.2 Text Access.vtt,00:00:44.100,00:00:48.120,"In this lecture, we're going to talk about some high-level strategies to"
+5,Lesson 1.2 Text Access.vtt,00:00:48.120,00:00:55.000,
+6,Lesson 1.2 Text Access.vtt,00:00:55.000,00:00:57.610,
+7,Lesson 1.2 Text Access.vtt,00:01:07.450,00:01:11.550,"So the main question we'll address here, is howcan a text information system, help users get access to the relevant text data?"
+8,Lesson 1.2 Text Access.vtt,00:01:17.700,00:01:19.080,"And then we're going to talk about two ways to implement the pull mode,"
+9,Lesson 1.2 Text Access.vtt,00:01:20.770,00:01:22.860,
+10,Lesson 1.2 Text Access.vtt,00:01:29.250,00:01:29.900,These are two different ways connect the users with the right information
+11,Lesson 1.2 Text Access.vtt,00:01:37.230,00:01:38.740,"The difference is which takes the initiative,"
+12,Lesson 1.2 Text Access.vtt,00:01:41.380,00:01:46.439,"In the pull mode,"
+13,Lesson 1.2 Text Access.vtt,00:01:47.700,00:01:53.420,
+14,Lesson 1.2 Text Access.vtt,00:01:56.100,00:02:01.640,"For example, the user may type in the query and"
+15,Lesson 1.2 Text Access.vtt,00:02:06.280,00:02:09.340,So this is usually appropriate for
+16,Lesson 1.2 Text Access.vtt,00:02:10.580,00:02:14.280,
+17,Lesson 1.2 Text Access.vtt,00:02:17.870,00:02:22.550,"For example, you want to buy a product so"
+18,Lesson 1.2 Text Access.vtt,00:02:22.550,00:02:26.620,
+19,Lesson 1.2 Text Access.vtt,00:02:28.880,00:02:30.200,"You generally no longer need such information, so"
+20,Lesson 1.2 Text Access.vtt,00:02:39.480,00:02:42.260,"In such a case, it's very hard for a system to predict your need, andit's more proper for the users to take the initiative, and"
+21,Lesson 1.2 Text Access.vtt,00:02:42.260,00:02:48.370,
+22,Lesson 1.2 Text Access.vtt,00:02:48.370,00:02:52.620,
+23,Lesson 1.2 Text Access.vtt,00:02:52.620,00:02:55.720,
+24,Lesson 1.2 Text Access.vtt,00:02:55.720,00:02:56.590,
+25,Lesson 1.2 Text Access.vtt,00:02:57.950,00:02:59.680,
+26,Lesson 1.2 Text Access.vtt,00:03:03.570,00:03:07.510,In contrast in the push mode in the system would take the initiative
+27,Lesson 1.2 Text Access.vtt,00:03:07.510,00:03:11.090,
+28,Lesson 1.2 Text Access.vtt,00:03:13.100,00:03:15.190,
+29,Lesson 1.2 Text Access.vtt,00:03:15.190,00:03:16.900,
+30,Lesson 1.2 Text Access.vtt,00:03:22.040,00:03:24.980,For example you may have a research interest in some topic and
+31,Lesson 1.2 Text Access.vtt,00:03:24.980,00:03:26.930,
+32,Lesson 1.2 Text Access.vtt,00:03:26.930,00:03:29.240,
+33,Lesson 1.2 Text Access.vtt,00:03:34.100,00:03:38.860,A stable information need is such a case the system can interact with you and
+34,Lesson 1.2 Text Access.vtt,00:03:43.710,00:03:47.900,"If the system hasn't seen any relevant items to your interest,"
+35,Lesson 1.2 Text Access.vtt,00:03:53.020,00:03:56.870,"So, for example, a news filter ornews recommended system could monitor the news stream and"
+36,Lesson 1.2 Text Access.vtt,00:04:03.960,00:04:08.790,This mode of information access may be also a property that when this system
+37,Lesson 1.2 Text Access.vtt,00:04:11.850,00:04:16.130,"So for example, when you search for information on the web"
+38,Lesson 1.2 Text Access.vtt,00:04:16.130,00:04:17.530,
+39,Lesson 1.2 Text Access.vtt,00:04:20.950,00:04:24.780,"And they would recommend the information to you, so that just reminds you, for"
+40,Lesson 1.2 Text Access.vtt,00:04:27.790,00:04:34.540,
+41,Lesson 1.2 Text Access.vtt,00:04:35.720,00:04:38.440,
+42,Lesson 1.2 Text Access.vtt,00:04:39.900,00:04:43.740,
+43,Lesson 1.2 Text Access.vtt,00:04:43.740,00:04:46.010,
+44,Lesson 1.2 Text Access.vtt,00:04:46.010,00:04:48.790,
+45,Lesson 1.2 Text Access.vtt,00:04:50.560,00:04:53.430,"Typical the keyword query, and"
+46,Lesson 1.2 Text Access.vtt,00:04:54.500,00:05:00.730,
+47,Lesson 1.2 Text Access.vtt,00:05:02.450,00:05:04.540,"So if you know exactly what you are looking for,"
+48,Lesson 1.2 Text Access.vtt,00:05:04.540,00:05:07.880,
+49,Lesson 1.2 Text Access.vtt,00:05:09.290,00:05:12.740,
+50,Lesson 1.2 Text Access.vtt,00:05:16.970,00:05:21.760,"When you don't know the right keywords to use in the query, or"
+51,Lesson 1.2 Text Access.vtt,00:05:21.760,00:05:24.780,
+52,Lesson 1.2 Text Access.vtt,00:05:34.740,00:05:39.850,"So in this case, in the case of browsing, the users would simply navigate it,into the relevant information by following the paths"
+53,Lesson 1.2 Text Access.vtt,00:05:42.690,00:05:45.190,So the system would maintain some kind of structures and
+54,Lesson 1.2 Text Access.vtt,00:05:53.850,00:05:59.750,So this really works well when the user wants to explore the information space
+55,Lesson 1.2 Text Access.vtt,00:05:59.750,00:06:05.070,
+56,Lesson 1.2 Text Access.vtt,00:06:10.450,00:06:12.370,So even if a user knows what query to type in if the user is using a cellphone
+57,Lesson 1.2 Text Access.vtt,00:06:12.370,00:06:14.760,
+58,Lesson 1.2 Text Access.vtt,00:06:14.760,00:06:18.840,
+59,Lesson 1.2 Text Access.vtt,00:06:23.060,00:06:24.130,The relationship between browsing and querying is best understood by making and
+60,Lesson 1.2 Text Access.vtt,00:06:25.230,00:06:27.080,
+61,Lesson 1.2 Text Access.vtt,00:06:27.080,00:06:29.800,
+62,Lesson 1.2 Text Access.vtt,00:06:31.670,00:06:34.900,
+63,Lesson 1.2 Text Access.vtt,00:06:34.900,00:06:36.860,
+64,Lesson 1.2 Text Access.vtt,00:06:36.860,00:06:40.440,
+65,Lesson 1.2 Text Access.vtt,00:06:40.440,00:06:43.579,
+66,Lesson 1.2 Text Access.vtt,00:06:44.670,00:06:48.160,
+67,Lesson 1.2 Text Access.vtt,00:06:51.480,00:06:55.360,"If you know exactly what you are looking for, then you can"
+68,Lesson 1.2 Text Access.vtt,00:06:55.360,00:06:58.150,
+69,Lesson 1.2 Text Access.vtt,00:07:02.180,00:07:04.369,But what if you don't know the exact keywords to use?
+70,Lesson 1.2 Text Access.vtt,00:07:04.369,00:07:06.150,
+71,Lesson 1.2 Text Access.vtt,00:07:10.160,00:07:14.110,"And then, you need to also walk around in the information space,"
+72,Lesson 1.2 Text Access.vtt,00:07:14.110,00:07:16.430,
+73,Lesson 1.2 Text Access.vtt,00:07:17.580,00:07:20.720,
+74,Lesson 1.2 Text Access.vtt,00:07:29.914,00:07:36.405,You will likely do a lot of browsing sojust like you are looking around in some area and you want to see some
+75,Lesson 1.2 Text Access.vtt,00:07:36.405,00:07:39.200,
+76,Lesson 1.2 Text Access.vtt,00:07:45.330,00:07:50.600,So this analogy also tells us that today we have very good support for
+77,Lesson 1.2 Text Access.vtt,00:07:54.470,00:07:57.840,"And this is because in order to browse effectively,"
+78,Lesson 1.2 Text Access.vtt,00:07:58.410,00:08:04.060,"Of Chicago,"
+79,Lesson 1.2 Text Access.vtt,00:08:12.730,00:08:16.950,So how to construct such a topical map is in fact a very interestingresearch question that might bring us
+80,Lesson 1.2 Text Access.vtt,00:08:21.280,00:08:26.550,"So, to summarize this lecture,"
+81,Lesson 1.2 Text Access.vtt,00:08:29.130,00:08:31.770,"Push tends to be supported by the Recommender System, and"
+82,Lesson 1.2 Text Access.vtt,00:08:35.710,00:08:36.780,"Of course, in the sophisticated [INAUDIBLE] information system,"
+83,Lesson 1.2 Text Access.vtt,00:08:38.590,00:08:41.830,
+84,Lesson 1.2 Text Access.vtt,00:08:47.140,00:08:50.080,"Again we generally want to combine the two ways to help you assist,"
+85,Lesson 1.2 Text Access.vtt,00:08:55.420,00:08:58.600,If you want to know more about the relationship between pull and
+86,Lesson 1.2 Text Access.vtt,00:09:03.560,00:09:05.330,This give excellent discussion of the relationship between machine filtering and
+87,Lesson 1.2 Text Access.vtt,00:09:10.271,00:09:12.749,Here informational filtering is similar to information recommendation or
