@@ -11,13 +11,15 @@ def convert_time(time_stamp):
 
 
 if __name__ == '__main__':
+    print("Start parsing...")
     df = pd.DataFrame(columns=['lecture', 'lecture_id', 'start_time', 'end_time', 'text'])
     lecture_df = pd.read_csv('./dataset/link_info.csv')
+    lecture_count = 0
     with open("./dataset/cs410.dat", "w") as file:
         for index, row in lecture_df.iterrows():
             lecture = row['lecture']
             lecture_id = row['id']
-            print("Processing {} ({})".format(lecture, lecture_id))
+            print("Parsing {} ({})".format(lecture, lecture_id))
             update_start = True
             end = ''
             accu_text = ''
@@ -62,4 +64,7 @@ if __name__ == '__main__':
                     else:
                         # print("***find dot but not long enough " + start + " ----> " + end + "***")
                         update_start = False
+            lecture_count += 1
     df.to_csv('./dataset/data.csv')
+    print("Parsed {} lectures in total.".format(lecture_count))
+    print("Parsed {} segments in total.".format(df.shape[0]))
