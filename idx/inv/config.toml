@@ -1,0 +1,9 @@
+index = "idx"
+corpus = "line.toml"
+dataset = "cs410"
+prefix = "."
+stop-words = "stopwords.txt"
+[[analyzers]]
+	filter = "default-unigram-chain"
+	method = "ngram-word"
+	ngram = 1

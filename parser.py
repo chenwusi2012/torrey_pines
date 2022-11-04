@@ -15,7 +15,7 @@ if __name__ == '__main__':
     df = pd.DataFrame(columns=['lecture', 'lecture_id', 'start_time', 'end_time', 'text'])
     lecture_df = pd.read_csv('./dataset/link_info.csv')
     lecture_count = 0
-    with open("./dataset/cs410.dat", "w") as file:
+    with open("./cs410/cs410.dat", "w") as file:
         for index, row in lecture_df.iterrows():
             lecture = row['lecture']
             lecture_id = row['id']
