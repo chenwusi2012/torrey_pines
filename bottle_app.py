@@ -39,6 +39,7 @@ def search():
     a = datetime.datetime.now()
     print("Result page")
     query = request.forms.get('query')
+    query = query.strip()
     print("QUERY: '{}'".format(query))
     indexes = rank(query, COUNT_THRESHOLD)
     result = []
