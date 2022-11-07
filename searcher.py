@@ -22,6 +22,7 @@ def search(keyword, top_count):
     result = []
     for relevant_doc in top_docs:
         result.append(relevant_doc[0])
+    print(result)
     return result
 
 

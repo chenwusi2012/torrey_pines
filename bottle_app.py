@@ -1,10 +1,13 @@
-from flask import Flask, request, render_template, redirect, url_for
+from bottle import route, run, template, request
 import pandas as pd
+import metapy
+import datetime
+
+df = pd.read_csv('./dataset/data.csv')
+print("Dataframe loaded")
 
 LINK_PREFIX = "https://www.coursera.org/learn/cs-410/lecture/"
-COUNT_THRESHOLD = 5
-
-app = Flask(__name__)
+COUNT_THRESHOLD = 10
 
 
 def convert_time(time_stamp):
@@ -14,41 +17,32 @@ def convert_time(time_stamp):
 
 
 def rank(query_terms, top_count):
-    import metapy
     idx = metapy.index.make_inverted_index('config.toml')
-    print("1")
     ranker = metapy.index.OkapiBM25(k1=1.2, b=0.75, k3=1.2)
-    print("2")
     query = metapy.index.Document()
     query.content(query_terms)
-    print("3")
     top_docs = ranker.score(idx, query, num_results=top_count)
-    print("4")
     result = []
     for relevant_doc in top_docs:
         result.append(relevant_doc[0])
     return result
 
 
-@app.route('/', methods=["GET", "POST"])
-def gfg():
-    if request.method == "POST":
-        query = request.form.get("query")
-        query = query.replace(" ", "+")
-        return redirect(url_for('search', query=query))
-    return render_template("home.html")
+@route('/')
+def root():
+    print("Home page")
+    return template('home')
 
 
-@app.route('/search/<query>')
-def search(query):
-    query = query.replace("+", " ")
-    query = query.strip()
-    print("QUERY: {}".format(query))
-    # indexes = [28, 32]
+@route('/search', method='POST')
+def search():
+    a = datetime.datetime.now()
+    print("Result page")
+    query = request.forms.get('query')
+    print("QUERY: '{}'".format(query))
     indexes = rank(query, COUNT_THRESHOLD)
-    print("INDEX: {}".format(indexes))
-    df = pd.read_csv('./dataset/data.csv')
     result = []
+    print("INDEX: {}".format(indexes))
     for index in indexes:
         segment = {}
         sub_df = df.iloc[index]
@@ -60,8 +54,12 @@ def search(query):
         segment['link'] = LINK_PREFIX + link + "?t=" + str(convert_time(segment['start_time']))
         segment['index'] = index
         result.append(segment)
-    return render_template('result.html', query=query, result=result)
+    print("Result collected, display on webpage...")
+    b = datetime.datetime.now()
+    c = b - a
+    time_delta = c.seconds + c.microseconds / 1000000
+    print("SEARCH TIME: {}".format(time_delta))
+    return template('result', query=query, result=result, time_delta=time_delta)
 
 
-if __name__ == '__main__':
-    app.run(debug=False)
+run(host='localhost', port=8080, debug=True)
