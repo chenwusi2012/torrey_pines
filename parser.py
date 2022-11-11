@@ -1,7 +1,12 @@
 import webvtt
 import pandas as pd
+import metapy
+import os
+import shutil
+
 
 SEGMENT_THRESHOLD = 30
+LINK_PREFIX = "https://www.coursera.org/learn/cs-410/lecture/"
 
 
 def convert_time(time_stamp):
@@ -17,16 +22,20 @@ if __name__ == '__main__':
     lecture_count = 0
     with open("./cs410/cs410.dat", "w") as file:
         for index, row in lecture_df.iterrows():
+            segments_in_lecture = 0
             lecture = row['lecture']
             lecture_id = row['id']
-            print("Parsing {} ({})".format(lecture, lecture_id))
+            lecture_link = LINK_PREFIX + lecture_id
+            print("Parsing ({}) {} ({})".format(lecture_count+1, lecture, lecture_link))
             update_start = True
             end = ''
             accu_text = ''
             filename = lecture + ".vtt"
-            captions = webvtt.read('./subtitles/' + filename)
+            try:
+                captions = webvtt.read('./subtitles/' + filename)
+            except FileNotFoundError:
+                print("Unable to find the file {}".format(filename))
             start = captions[0].start
-            # print(len(captions))
             for idx, caption in enumerate(captions):
                 start_time = caption.start[0:-4]
                 end_time = caption.end[0:-4]
@@ -45,6 +54,7 @@ if __name__ == '__main__':
                     df = df.append({'lecture': filename, 'lecture_id': lecture_id, 'start_time': start, 'end_time': end,
                                     'text': accu_text.strip()},
                                    ignore_index=True)
+                    segments_in_lecture += 1
                     file.write(accu_text.strip() + "\n")
                 elif text[-1] != '.':
                     # print("***not a dot, continue***")
@@ -58,6 +68,7 @@ if __name__ == '__main__':
                             {'lecture': filename, 'lecture_id': lecture_id, 'start_time': start, 'end_time': end,
                              'text': accu_text.strip()},
                             ignore_index=True)
+                        segments_in_lecture += 1
                         file.write(accu_text.strip() + "\n")
                         accu_text = ''
                         update_start = True
@@ -65,6 +76,16 @@ if __name__ == '__main__':
                         # print("***find dot but not long enough " + start + " ----> " + end + "***")
                         update_start = False
             lecture_count += 1
+            print("Parsed {} segment(s) from this lecture".format(segments_in_lecture))
     df.to_csv('./dataset/data.csv')
+    if os.path.exists('./idx/'):
+        print("Old inverted index exist, remove old inverted index")
+        shutil.rmtree('./idx/')
+    print("Generating inverted index")
+    idx = metapy.index.make_inverted_index('config.toml')
+    print("==============================")
+    print("Summary")
+    print("==============================")
     print("Parsed {} lectures in total.".format(lecture_count))
     print("Parsed {} segments in total.".format(df.shape[0]))
+    print("Total number of segments in inverted index: {}".format(idx.num_docs()))
