@@ -14,5 +14,6 @@ To use the search engine application, install Python 3.7 and the following Pytho
 - Pandas
 
 To launch the search engine application, run the following command in the project directory:
-
-> python bottle_app.py
+```shell
+python bottle_app.py
+```
