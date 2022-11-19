@@ -28,23 +28,6 @@ def rank(query_terms, top_count):
     return result
 
 
-def bold_words(text, query):
-    mark = [',', '.', ';', ':', '?', ')', '(']
-    words = text.split(' ')
-    query = query.lower()
-    terms = query.split(' ')
-    for idx, word in enumerate(words):
-        if word[-1] in mark:
-            end_character = word[-1]
-            word = word[0:-1]
-            if word.lower() in terms:
-                words[idx] = "<b>" + word + "</b>" + end_character
-        else:
-            if word.lower() in terms:
-                words[idx] = "<b>" + word + "</b>"
-    return ' '.join(words)
-
-
 @route('/')
 def root():
     print("Home page")
@@ -71,7 +54,7 @@ def search():
         segment['lecture'] = sub_df['lecture'][0:-4]
         segment['start_time'] = sub_df['start_time']
         segment['end_time'] = sub_df['end_time']
-        segment['text'] = bold_words(text=sub_df['text'], query=query)
+        segment['text'] = sub_df['text']
         lecture_id = sub_df['lecture_id']
         segment['lecture_link'] = LINK_PREFIX + lecture_id
         segment['segment_link'] = LINK_PREFIX + lecture_id + "?t=" + str(convert_time(segment['start_time']))
