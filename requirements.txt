@@ -1,0 +1,4 @@
+bottle==0.12.23
+metapy==0.2.13
+webvtt-py==0.4.6
+pytoml==0.1.21
