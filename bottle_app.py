@@ -7,7 +7,7 @@ df = pd.read_csv('./dataset/data.csv')
 print("Dataframe loaded")
 
 LINK_PREFIX = "https://www.coursera.org/learn/cs-410/lecture/"
-COUNT_THRESHOLD = 10
+COUNT_THRESHOLD = 20
 
 
 def convert_time(time_stamp):

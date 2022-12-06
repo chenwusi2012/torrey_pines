@@ -6,7 +6,7 @@ Please find the project documents in the following paths:
 
 - Project proposal: docs/Wusi Chen (wusic2) - Project Proposal.pdf
 - Progress report: docs/Wusi Chen (wusic2) - Progress Report.pdf
-- Project report (DRAFT): docs/Wusi Chen (wusic2) - Project Report (DRAFT)
+- Project report: docs/Wusi Chen (wusic2) - Project Report
 
 To use the search engine application, install Python 3.7 and the following Python libraries:
 
@@ -14,6 +14,7 @@ To use the search engine application, install Python 3.7 and the following Pytho
 - webvtt-py
 - Pandas
 - pytoml
+- bottle
 
 To clone the project repository, run the following command:
 ```shell
