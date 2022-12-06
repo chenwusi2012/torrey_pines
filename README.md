@@ -8,7 +8,7 @@ Please find the project documents in the following paths:
 - Progress report: docs/Wusi Chen (wusic2) - Progress Report.pdf
 - Project report: docs/Wusi Chen (wusic2) - Project Report
 
-To use the search engine application, install Python 3.7 and the following Python libraries:
+To use the search engine application, install Python 3.7.0 and the following Python libraries:
 
 - Metapy
 - webvtt-py
