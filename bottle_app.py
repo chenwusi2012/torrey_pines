@@ -56,7 +56,7 @@ def search():
         segment['end_time'] = sub_df['end_time']
         segment['text'] = sub_df['text']
         lecture_id = sub_df['lecture_id']
-        segment['lecture_link'] = LINK_PREFIX + lecture_id
+        segment['lecture_link'] = LINK_PREFIX + lecture_id + "?t=0"
         segment['segment_link'] = LINK_PREFIX + lecture_id + "?t=" + str(convert_time(segment['start_time']))
         segment['index'] = index
         result.append(segment)
