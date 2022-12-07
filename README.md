@@ -7,6 +7,9 @@ Please find the project documents in the following paths:
 - Project proposal: docs/Wusi Chen (wusic2) - Project Proposal.pdf
 - Progress report: docs/Wusi Chen (wusic2) - Progress Report.pdf
 - Project report: docs/Wusi Chen (wusic2) - Project Report
+- Software use tutorial presentation video: 
+  - docs/Wusi Chen (wusic2) - Software Use Tutorial Presentation.mp4
+  - YouTube link: https://youtu.be/SEGmjTHSSxo
 
 To use the search engine application, install Python 3.7.0 and the following Python libraries:
 
